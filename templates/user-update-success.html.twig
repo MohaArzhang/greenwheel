@@ -1,0 +1,25 @@
+{% extends "master.html.twig" %}
+
+{% block title %}Upadate successful{% endblock %}
+{% block js %}
+<style>
+	#bikeImg{
+		width: 350px;     
+	}
+
+	#mainBody{
+		justify-conten5t: center;
+		text-align: center;
+	}
+</style>
+{% endblock js %}
+
+{% block content %}
+	<div id="mainBody" class="container">
+		<div class="title_edit_user"><b>{{curruser.name}}!</b></div>
+        <div class="title_edit_user">Your account was updated successfully.</div>
+		<div>
+			<img id="bikeImg" src="/img/success.png"/>
+		</div>
+	</div>
+{% endblock content %}

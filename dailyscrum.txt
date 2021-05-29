@@ -1,0 +1,322 @@
+Sunday 2021-05-23
+===================
+
+MOHA
+++++
+TO DO:
+1. Add map to landing page
+
+DONE:
+1. Logout for user
+2. Lotout for admin
+3. Landing page
+4. Links of navbar
+5. Logs and errors
+
+DAVOOD
+++++++
+TO DO:
+1. Statistics for admin
+
+DONE:
+1. Modify photo capture
+2. Upload photo in database
+
+ALI
++++
+TO DO:
+1. Add paypal fuctionality to booking
+
+DONE:
+1. Finalize booking page
+
+Saturday 2021-05-22
+===================
+
+MOHA
+++++
+TO DO:
+1. Logout for user
+2. Lotout for admin
+3. Landing page
+4. Links of navbar
+5. Validate page for admin's pages
+
+DONE:
+1. View account for user
+
+DAVOOD
+++++++
+TO DO:
+1. Finalize capturing the photo
+
+DONE:
+1. Upload photo in database
+
+NEED ASSISTANCE
++++++++++++++++
+1. Find out how to work with google map
+
+ALI
++++
+TO DO:
+1. Finalize booking page
+
+DONE:
+1. Not done the previous task
+
+Friday 2021-05-21
+==================
+
+MOHA
+++++
+TO DO:
+1. View account for user
+
+DONE:
+1. Edit user for admin
+
+DAVOOD
+++++++
+TO DO:
+1. Continue on map for stations
+
+DONE:
+1. Previous task
+
+ALI
++++
+TO DO:
+1. Complete PHP of booknig page
+
+DONE:
+1. Complete the UI of booking page
+
+Tuesday 2021-05-20
+==================
+
+MOHA
+++++
+TO DO:
+1. Edit user for admin
+2. View account for user
+
+DONE:
+1. Merge all user pages
+
+DAVOOD
+++++++
+TO DO:
+1. Continue on map for stations
+
+DONE:
+1. Previous task
+
+ALI
++++
+TO DO:
+1. Continue to code the booknig page
+
+DONE:
+1. Continue to code the booknig page
+
+
+Tuesday 2021-05-19
+==================
+
+MOHA
+++++
+TO DO:
+1. Merge all user pages
+
+DONE:
+1. Update database
+2. Finding the solution for merging all pages in index
+
+DAVOOD
+++++++
+TO DO:
+1. Continue previous task
+
+DONE:
+1. Start to work on landing page
+2. Finding the solution for merging all pages in index
+
+ALI
++++
+TO DO:
+1. Get Bike Id and User Id from other pages 
+
+DONE:
+1. Continue to code the booknig page
+2. Finding the solution for merging all pages in index
+
+
+Tuesday 2021-05-18
+==================
+
+MOHA
+++++
+TO DO:
+1. Update database
+2. Finding the solution for merging all pages in index
+
+DONE:
+1. Modify the registration page and login page
+
+DAVOOD
+++++++
+TO DO:
+1. Start to work on landing page
+2. Finding the solution for merging all pages in index
+
+DONE:
+1. Continue to code the account page
+
+ALI
++++
+TO DO:
+1. Continue to code the booknig page
+2. Finding the solution for merging all pages in index
+
+DONE:
+1. Continue to code the booknig page
+
+Monday 2021-05-17
+=================
+
+MOHA
+++++
+TO DO:
+1. Modify the registration page and login page
+
+DONE:
+1. First version of login and registration page
+
+DAVOOD
+++++++
+TO DO:
+1. Continue to code the account page
+
+DONE:
+1. First version of edit account page
+2. Activate camera capture for editing profile page
+
+ALI
++++
+TO DO:
+1. Continue to code the booknig page
+
+DONE:
+1. Continue to code the booknig page
+
+Satruday 2021-05-15
+=================
+
+MOHA
+++++
+TO DO:
+1. Continue to code the registration page
+
+DONE:
+1. Start to code the registration page
+
+DAVOOD
+++++++
+TO DO:
+1. Continue to code the account page
+
+DONE:
+1. Start to code the account page
+
+ALI
++++
+TO DO:
+1. Continue to code the booknig page
+
+DONE:
+1. Start to code the booknig pag
+
+Friday 2021-05-14
+=================
+
+MOHA
+++++
+TO DO:
+1. Start to code the registration page
+
+DONE:
+1. Read the Slim documentation
+
+DAVOOD
+++++++
+TO DO:
+1. Start to code the account page
+
+DONE:
+1. Review the code of SlimBlog project
+
+ALI
++++
+TO DO:
+1. Start to code the booknig page
+
+DONE:
+1. Modify Trello
+
+Thursday 2021-05-13
+===================
+
+MOHA
+++++
+TO DO:
+1. Read the Slim documentation
+
+DONE
+1. Daily Scrum
+2. Finalize PHP proposal
+3. Create repository
+4. Prepare general plan
+
+DAVOOD
+++++++
+TO DO:
+1. Review the code of SlimBlog project
+
+DONE:
+1. Find the solution for using Google Maps API
+2. Finalize PHP proposal
+
+ALI
++++
+TO DO:
+1. Modify Trello
+
+DONE:
+1. Create structure of project's folder
+2. Create Trello
+3. Finalize PHP proposal
+
+
+Tuseday 2021-05-11
+==================
+
+MOHA
+++++
+TO DO:
+1. Daily Scrum
+2. Finalize PHP proposal
+3. Create repository
+4. Prepare general plan
+
+DAVOOD
+++++++
+TO DO:
+1. Find the solution for using Google Maps API
+2. Finalize PHP proposal
+
+ALI
++++
+TO DO:
+1. Create Trello
+2. Finalize PHP proposal

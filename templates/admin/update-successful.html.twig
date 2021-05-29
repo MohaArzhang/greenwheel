@@ -1,0 +1,44 @@
+{% extends "master-admin.html.twig" %}
+
+{% block title %}Successful update{% endblock %}
+{% block js %}
+<style>
+	#loginImage{
+		width: 230px;
+		margin: 10px 0;
+	}
+
+	#mainBody{
+		justify-content: center;
+		text-align: center;
+	}
+    
+    .btnColorChange{
+        color: white;
+    }
+
+    .btnColorChange:hover{
+        color: white;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+    a:active {
+        text-decoration: none;
+    }
+</style>
+{% endblock js %}
+
+{% block content %}
+	<div id="mainBody" class="container">
+        <div class="title_edit_user">Account of <b>{{nameUser}}</b> was updated successfully.</div>
+		<div>
+			<img id="loginImage" src="/img/success.png"/>
+		</div>
+        <div>
+			<button name="subscribe" type="submit" class="btn btn-secondary btn-sm btnWidth"><a class="correctButton btnColorChange" href="/viewusers">Back to edit users</a></button>
+        </div>
+	</div>
+
+{% endblock content %}

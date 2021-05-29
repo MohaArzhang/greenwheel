@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="/styles.css" rel="stylesheet">
+	<title>
+	{% block title %} - Bike Rental{% endblock %}
+		
+		</title>
+		{% block head %}{% endblock %}
+	</head>
+	<body>
+	    	{# HEADER #}
+		<div class="masterDiv" id="section0">
+			<span id="headTitle">Green Wheel</span>
+			<img id="bicycleLogo" src="/img/bicycle_logo.png">
+		</div>
+		<div class="d-flex p-2 bd-highlight">
+			<nav class="navbar-expand-sm navbar-light">
+				<div class="container-fluid navDiv">
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNav">
+						<ul class="navbar-nav navbar-center">
+							<li class="nav-item">
+								<a class="nav-link" href="/">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#section2">About Us</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#section4">Contact Us</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#section3">Booking</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/login">Login</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/logout">Logout</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/profile">Account</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+
+	<section id="container" class="">
+    <!--header start-->
+    <header id="header" class="fixed-top">  </header>
+ 
+	<section id="main-content">
+      <section class="wrapper">
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="page-header">
+			{% block bodytitle %}{% endblock %}</h3>
+          </div>
+        </div>
+		<div class="row">
+          <div class="col-lg-12">
+            <section class="panel">
+			{% block content %}
+					<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+							
+							</div>
+							
+			{% endblock %}
+			</section>
+			</div>
+			</div>
+
+		{% block js %}
+		{% endblock %}
+    
+    
+	</body>
+</html>

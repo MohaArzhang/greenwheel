@@ -1,0 +1,164 @@
+{% extends "master.html.twig" %}
+{% block js %}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+	<style>
+		.dateTimeInputTwo {
+			margin: 50px 20px !important;
+		}
+		.centeralltwo {
+			display: flex;
+
+			margin: 30px 20px;
+			justify-content: center;
+			/*   align-items: center;  */
+		}
+
+		.inputwidth {
+			width: 350px !important;
+			margin: 20px auto !important;
+		}
+		#station_input {
+			padding: 0 70px;
+			font-size: 20px;
+			font-weight: bold;
+			color: green;
+		}
+		.imgmargin{
+		
+			margin: 20px auto;
+		}
+		
+	</style>
+{% endblock %}
+
+
+{% block title %}booking
+{% endblock %}
+
+{% block content %}
+
+	<div>
+
+
+		<form method="POST">
+			<div class="input-group container inputwidth">
+				<span class="input-group-text" id="basic-addon3">Selected Station
+				</span>
+				<input type="number" min="1" max="5" class="form-control " name="stationid" value="{{ currstation}}" id="station_input" aria-describedby="basic-addon3">
+			</div>
+
+
+			<div class=" centeralltwo">
+				<div class="dateTimeInputTwo">
+					<span>Select Time Out</span>
+					<input id="timeout" name="timeout" width="312"/>
+					<script>
+						$('#timeout').datetimepicker({
+  defaultDate: null
+},{
+uiLibrary: 'bootstrap5'
+}, {
+footer: true,
+modal: true
+}, {dateFormat: 'dd-mm-yy'});
+					</script>
+				</div>
+				<div class="dateTimeInputTwo">
+					<span>Select Time In</span>
+					<input id="timein" name="timein" width="312"/>
+					<script>
+						$('#timein').datetimepicker({
+uiLibrary: 'bootstrap5'
+}, {
+footer: true,
+modal: true
+}, {dateFormat: 'dd-mm-yy'});
+					</script>
+				</div>
+			</div>
+
+			{# Cards #}
+
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="card p-0">
+							<div class="card-image imgmargin">
+								<img src="img/scooter_1.png"  alt="" >
+							</div>
+							<div class="card-content d-flex flex-column align-items-center">
+								<h4 class="pt-2">Scooter</h4>
+								<h5>Faster than walking and greener</br>
+								than driving
+							</h5>
+							<i class="fas fa-angle-double-down mt-3 "></i>
+						</div>
+					</div>
+					{# 	schooter radius #}
+					<div class="choose">
+						<label id="female">
+							<input name="bikeType" value="Scooter" type="radio">
+							<span>
+								<i class="fa fa-motorcycle"></i>
+							</span>
+						</label>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="card p-0">
+						<div class="card-image imgmargin">
+							<img src="img/bike_1.png"  alt="">
+						</div>
+						<div class="card-content d-flex flex-column align-items-center">
+							<h4 class="pt-2">Regular Bike</h4>
+							<h5>From road bikes to mountain bikes</br>
+							and beyond</h5>
+						<i class="fas fa-angle-double-down mt-3 "></i>
+					</div>
+				</div>
+				{# 	regular radius #}
+				<div class="choose">
+					<label id="male">
+						<input name="bikeType" value="Regular" type="radio">
+						<span>
+							<i class="fa fa-bicycle"></i>
+						</span>
+					</label>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="card p-0">
+					<div class="card-image imgmargin">
+						<img src="img/electricbike_1.png"  alt="">
+					</div>
+					<div class="card-content d-flex flex-column align-items-center">
+						<h4 class="pt-2">Electric Bike</h4>
+						<h5>The bike that will  change
+						</br>
+						your life</h5>
+					<i class="fas fa-angle-double-down mt-3 "></i>
+				</div>
+			</div>
+			{# 	electric radius #}
+			<div class="choose">
+				<label id="female">
+					<input name="bikeType" value="Electric" type="radio">
+					<span>
+						<i class="fa fa-motorcycle"></i>
+					</span>
+				</label>
+			</div>
+		</div>
+	</div>
+</div>
+
+{# submit button #}
+<div class="centerall">
+
+	<div>
+		<button type="submit" name="btn_toCheckout" value="0" class="btn btn-secondary checkOutBtn">
+			Proceed to CheckOut</button>
+	</div>
+
+
+</div></form></div>{% endblock content %}

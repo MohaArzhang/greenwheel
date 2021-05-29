@@ -1,0 +1,47 @@
+{% extends "master.html.twig" %}
+
+{% block content %}
+<script>
+    $(document).ready(function(){
+        $("#exampleModal").modal('show');
+    });
+ $('#exampleModal').modal({
+    		backdrop: 'static',
+    		keyboard: false
+		});
+    
+</script>
+
+<!-- Modal -->
+{# <div class="modal fade" id="exampleModal"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+     
+      <div class="modal-body">
+ <a href="https://greenwheel.ipd24.ca/login" class="btn btn-primary  align-self-center " tabindex="-1" role="button" >Please Login to Continue</a>
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-info align-self-center" onclick="javascript:window.history.back();">Back to Booking Page</button>
+      </div>
+    </div>
+  </div>
+</div> #}
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">You Are not Logged In</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+    
+      <div class="modal-footer">
+       <a href="https://greenwheel.ipd24.ca/login" class="btn btn-primary  " tabindex="-1" role="button" >Please Login to Continue</a>
+          <button type="button" class="btn btn btn-secondary" onclick="javascript:window.history.back();">Back to Booking Page</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

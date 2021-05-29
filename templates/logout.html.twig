@@ -1,0 +1,26 @@
+{% extends "master.html.twig" %}
+
+{% block title %}Log out{% endblock %}
+{% block js %}
+<style>
+	#bikeImg{
+		width: 400px;
+		margin: 30px 0;
+	}
+
+	#mainBody{
+		justify-content: center;
+		text-align: center;
+	}
+</style>
+{% endblock js %}
+
+{% block content %}
+	<div id="mainBody" class="container">
+		<div class="title_edit_user">Log out successful.</div>
+		<div>
+			<img id="bikeImg" src="/img/log-out.jpg"/>
+		</div>
+	</div>
+
+{% endblock content %}

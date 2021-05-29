@@ -1,0 +1,97 @@
+{% extends "master.html.twig" %}
+
+{% block title %}Find a Near Station Arounfd{% endblock %}
+
+{% block js %}
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    
+    <script>
+      // This example displays a marker at the center of Australia.
+      // When the user clicks the marker, an info window opens.
+      
+      function initMap() {
+          
+          var latitude = document.getElementById("lat").value;
+			var longitude = document.getElementById("log").value;
+			lat = parseFloat(latitude);
+			long = parseFloat(longitude);			
+			if(isNaN(lat) == true || isNaN(long) == true) {
+				var location = {lat: 45.508888, lng: -73.561668};
+			} else {
+				var location = {lat: lat, lng: long};
+			}
+        const map = new google.maps.Map(document.getElementById('map'), {
+				zoom: 12,
+				center: location 		
+			});
+			
+       const tourStops = [
+			[{ lat: 45.49685201440967, lng: -73.679103456297 },   "<h6>Sherbrook Station1</h6>  <b>Electric Bike</b> : 12 <b>Electric Scooter </b>: 10</p>       Website: <a href=https://greenwheel.ipd24.ca/booking>sherbrook1 </a>"],
+			[{ lat: 45.482052111620405, lng: -73.59876100533207 }, "Sherbrook Station1 <b>Electric Bike</b> : 13 <b>Electric Scooter </b>: 11</p>       Website: <a href=https://greenwheel.ipd24.ca/booking>sherbrook2 </a>"],
+			[{ lat: 45.508187560299845, lng: -73.60968113187481 }, "Sherbrook Station1 <b>Electric Bike</b> : 12 <b>Electric Scooter </b>: 12</p>       Website: <a href=https://greenwheel.ipd24.ca/booking>sherbrook3 </a>"],
+			[{ lat: 45.504026966973505, lng:  -73.6319544055863},  "Sherbrook Station1 <b>Electric Bike</b> : 14 <b>Electric Scooter </b>: 13</p>       Website: <a href=https://greenwheel.ipd24.ca/booking>sherbrook4 </a>"],
+			[{ lat: 45.529474505081545, lng: -73.64756803493027 }, "Sherbrook Station1 <b>Electric Bike</b> : 14 <b>Electric Scooter </b>: 14</p>       Website: <a href=https://greenwheel.ipd24.ca/booking>sherbrook6 </a>"],
+		  ];
+		  const infoWindow = new google.maps.InfoWindow();
+		  var image = {
+				url: 'https://www.altairapps.com/images/apps/icon_sevici.png',
+				scaledSize: new google.maps.Size(50, 50),
+                origin: new google.maps.Point(0,0), 
+                anchor: new google.maps.Point(0, 0) 
+			};
+		  tourStops.forEach(([position, title], i) => {
+			const marker = new google.maps.Marker({
+			  position,
+			  map,
+			  icon: image,
+			  title: `${title}`,
+			  optimized: false,
+			});
+			marker.addListener("click", () => {
+			  infoWindow.close();
+			  infoWindow.setContent(marker.getTitle());
+			  infoWindow.open(marker.getMap(), marker);
+			});
+		  });
+		}
+      
+    </script>
+
+	
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+
+			<form method="POST">
+			<input type="hidden" id="lat" name="lat" value="{{latitude}}">
+			<input type="hidden" id="log" name="log" value="{{longitude}}">
+			<h4> Search for station near you </h4>
+            <input type="text" class="form-control" name="postCode" id="postCode" placeholder="Enter your postal code here"></input>
+            <br>
+			<input type="submit" name="search" value="Search" class="btn btn-primary">
+			</form>
+		</div>
+        <br>
+		<div class="row">
+			<div class="col">
+				
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div style = "height: 400px; width: 100%" id="map">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBON6db-E8cIzVii1TuqKult0KLq9zvrDE&callback=initMap"
+      async>
+</script>
+{% endblock %}

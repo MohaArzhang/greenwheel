@@ -1,0 +1,75 @@
+{% extends "master-admin.html.twig" %}
+{% block js %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{% endblock %}
+{% block title %}Statistics & Reports{% endblock %}
+{% block content %}
+	<section id="container" class="">
+    <!--header start-->
+    <header id="header" class="fixed-top">  </header>
+ 
+	<section id="main-content">
+      <section class="wrapper">
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="page-header"></h3>
+          </div>
+        </div>
+		<div class="row">
+          <div class="col-lg-12">
+            <section class="panel">
+
+
+    <section class="container">
+        <div>   
+        {% if bikeAmountList %}
+            {% for amount in bikeAmountList %}     
+                <input class="amount" type="hidden" value="{{amount}}" />
+            {% endfor %}            
+        {% endif %}
+        {% if bikeIdList %}
+            {% for bikeId in bikeIdList %}     
+                <input class="bikeId" type="hidden" value="{{bikeId}}" />
+            {% endfor %}            
+        {% endif %}
+        {% if bikeCountList %}
+            {% for bikeCount in bikeCountList %}     
+                <input class="bikeCount" type="hidden" value="{{bikeCount}}" />
+            {% endfor %}            
+        {% endif %} 
+        {% if bikeTypeList %}
+            {% for bikeType in bikeTypeList %}     
+                <input class="bikeType" type="hidden" value="{{bikeType}}" />
+            {% endfor %}            
+        {% endif %}  
+            <div class="row">
+                <div class="col-lg-6">
+                    <section class="panel">
+                        <header class="panel-heading">
+                        Quantity by Type
+                        </header>
+                        <div class="panel-body text-center">
+                            <canvas class="my-4 w-100" id="pieChart" width="700" height="300"></canvas>  
+                        </div>
+                    </section>
+                </div>
+                <div class="col-lg-6">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            Amount earned by each type
+                        </header>
+                        <div class="panel-body text-center">
+                            <canvas class="my-4 w-100" id="barChart" width="700" height="300"></canvas>  
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/Charts.js"></script>
+{% endblock content %}
+
+

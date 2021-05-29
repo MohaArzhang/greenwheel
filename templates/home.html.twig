@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>{% block title %}{% endblock %}  - Bike Rental</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
+    
+   {% block stylesheet %}{% endblock %}
+  {% block head %}{% endblock %}
+
+</head>
+<body>
+ 
+        
+  <!-- Header -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex">
+      <div class="logo mr-auto">
+      </div>
+    <span class="navbar-toggler-icon"></span>
+  </button>
+      
+    </div>
+  </header>
+{% block hero %}{% endblock %}
+ 
+<main id="main">
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="breadcrumb-hero">
+        <div class="container">
+          <div class="breadcrumb-hero">
+            {% block greensectiontitle %}{% endblock %}
+            {% block greensection %}{% endblock %}
+          </div>
+        </div>
+      </div>
+    </section>
+// {% block about %}{% endblock %}
+    <section id="services" class="services  section-bg ">
+      <div class="container">
+        <div class="section-title pt-5">
+          <h2>{% block bodytitle %}{% endblock %}</h2>
+         </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="icon-box">
+              {% block body %}
+              
+              {% endblock %}
+              
+            </div>
+          </div>
+      </div>
+    </section>
+</main>
+  
+<script language="JavaScript">
+    Webcam.set({
+        width: 490,
+        height: 390,
+        image_format: 'jpeg',
+        jpeg_quality: 90
+    });
+  
+    Webcam.attach( '#my_camera' );
+  
+    function take_snapshot() {
+        Webcam.snap( function(data_uri) {
+            $(".image-tag").val(data_uri);
+            document.getElementById('results').innerHTML = '<img src="'+data_uri+'"/>';
+        } );
+    }
+</script>
+
+</body>
+
+</html>

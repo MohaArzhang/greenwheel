@@ -1,0 +1,35 @@
+{% extends "landing.html.twig" %}
+
+{% block title %}Login
+{% endblock %}
+{% block content %}
+	{% if errorList %}
+		<ul>
+			{% for error in errorList %}
+				<li class="errorFormat">{{error}}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+	{% if finalErrorList %}
+		<ul>
+			{% for error in finalErrorList %}
+				<li class="errorFormat">{{error}}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+	<form method="POST">
+		<div class="mb-3 bodyLogin">
+			<label for="email" class="titles">Email address</label>
+			<input name="email" type="text" class="form-control" id="email" aria-describedby="emailHelp"><br>
+			<label for="password" class="titles">Password</label>
+			<input name="pass" type="password" class="form-control" id="password" aria-describedby="emailHelp"><br>
+			<div class="correctButton">
+				<button type="submit" name="btn_submit" class="btn btn-secondary btn-sm correctWidth">Login</button>
+				<a href='/registeration'><div class="btn btn-secondary btn-sm correctWidth">Register</div></a>
+			</div>
+		</div>
+	</form>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlgwkylVbl390GkXpFAzLrXXM65LtTq_g&callback=myMap"></script>
+{% endblock content %}

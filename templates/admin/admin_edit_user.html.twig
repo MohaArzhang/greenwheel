@@ -1,0 +1,91 @@
+{% extends "master-admin.html.twig" %}
+
+
+{% block js %}
+<style>
+#centerBtn{
+	display: flex;
+	justify-content: center;
+}
+	.btnColorChange{
+		color: white;
+	}
+    .btnColorChange:hover{
+        color: white;
+    }
+
+    .btnColorChange:active {
+        text-decoration: none;
+    }
+
+	a:hover{
+		text-decoration: none;
+	}
+</style>
+{% endblock js %}
+
+{% block title %}Edit User{% endblock %}
+{% block content %}
+
+	<div class="title_edit_user">You are editing the profile of
+		<b>{{curruser.name}}</b>
+	</div>
+
+	{# ERROR CHECK #}
+	{% if errorList %}
+		<ul>
+			{% for error in errorList %}
+				<li class="errorFormat">{{error}}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+	{# END ERROR CHECK #}
+
+	<div class="centerImage">
+		<img class="frameUserPhotoBig" src="upload/{{curruser.photo}}"/>
+	</div>
+
+	{# FORM #}
+	<div class="mx-auto">
+		<div class="bodyRegister">
+			<form method="POST">
+				<div class="form-row">
+					<div class="form-group col-md-6 h-50">
+						<label for="email" class="titles">Name</label>
+						<input name="name" type="text" value="{{curruser.name}}" class="form-control" id="email" aria-describedby="emailHelp"><br>
+					</div>
+
+					<div class="form-group col-md-6 h-50">
+						<label for="address" class="titles">Address</label>
+						<input name="address" type="text" value="{{curruser.address}}" class="form-control" id="email" aria-describedby="emailHelp"><br>
+					</div>
+
+					<div class="form-group col-md-6">
+						<label for="postcode" class="titles">Postal Code</label>
+						<input name="postcode" type="text" value="{{curruser.postCode}}" class="form-control" id="email" aria-describedby="emailHelp"><br>
+					</div>
+
+					<div class="form-group col-md-6">
+						<label for="email" class="titles">Email</label>
+						<input name="email" type="text" value="{{curruser.email}}" class="form-control" id="email" aria-describedby="emailHelp"><br>
+					</div>
+
+					<div id="minusMarg" class="form-group col-md-6 container heightForField">
+						<label for="phone" class="titles">Phone</label>
+						<input name="phone" type="text" value="{{curruser.phone}}" class="form-control" id="email" aria-describedby="emailHelp"><br>
+					</div>
+				</div>
+
+				<div class="correctButton marginButton">
+					<button name="subscribe" type="submit" class="btn btn-secondary btn-sm btnWidth">Save Changes</button>
+				</div>
+			</form>
+				<div id="centerBtn">
+					<button class="btn btn-secondary btn-sm btnWidth">
+						<a class="correctButton btnColorChange" href="/viewusers">Cancel</a>
+					</button>
+				</div>
+		</div>
+	</div>
+	{# END OF FORM #}
+{% endblock content %}

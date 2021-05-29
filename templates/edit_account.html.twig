@@ -1,0 +1,147 @@
+{% extends "master.html.twig" %}
+
+{% block js %}
+	<style>
+#centerBtn{
+	display: flex;
+	justify-content: center;
+}
+	.btnColorChange{
+		color: white;
+	}
+    .btnColorChange:hover{
+        color: white;
+    }
+
+    .btnColorChange:active {
+        text-decoration: none;
+    }
+
+	a:hover{
+		text-decoration: none;
+	}
+</style>
+	</style>
+{% endblock %}
+
+{% block title %}View Profile
+{% endblock %}
+{% block content %}
+
+	<div class="title_edit_user">Hello
+		<b>{{curruser.name}}</b>
+	</div>
+
+	{# BLOCK FOR IMAGE FOR WEBCAM #}
+	<div class="container">
+		<form method="POST" action="saveimage.php">
+			<div class="forwebCam">
+				<div class="col-md-6 alignCamera">
+					<div id="my_camera" id="borderCamera"></div>
+					<br/>
+					<input type="hidden" name="image" class="image-tag">
+				</div>
+
+				<div class="col-md-6 alignCamera2">
+					<div id="results">
+						<div id="resultFrame">
+							<div>Your captured image will appear here</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div><input type="button" value="Update Photo" onclick="take_snapshot()" class="btn btn-secondary btn-sm btnWidth2 forwebCam"></div>
+			<div class="correctButton"></div>
+		</form>
+	</div>
+	{# END WEBCAM #}
+	<div class="centerImage">
+		<img class="frameUserPhotoBig" src="upload/{{curruser.photo}}"/>
+	</div>
+	{# ERROR CHECK #}
+	{% if errorList %}
+		<ul>
+			{% for error in errorList %}
+				<li class="errorFormat">{{error}}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+	{# END ERROR CHECK #}
+
+
+	{# FORM #}
+	<div class="mx-auto">
+		<div class="bodyRegister">
+			<form method="POST">
+				<div class="form-row">
+					<div class="form-group col-md-6 h-50">
+						<label for="email" class="titles">Name</label>
+						<input name="name" type="text" value="{{curruser.name}}" class="form-control" id="email" aria-describedby="emailHelp"><br>
+					</div>
+
+					<div class="form-group col-md-6 h-50">
+						<label for="address" class="titles">Address</label>
+						<input name="address" type="text" value="{{curruser.address}}" class="form-control" id="email" aria-describedby="emailHelp"><br>
+					</div>
+
+					<div class="form-group col-md-6">
+						<label for="postcode" class="titles">Postal Code</label>
+						<input name="postcode" type="text" value="{{curruser.postCode}}" class="form-control" id="email" aria-describedby="emailHelp"><br>
+					</div>
+
+					<div class="form-group col-md-6">
+						<label for="email" class="titles">Email</label>
+						<input name="email" type="text" value="{{curruser.email}}" class="form-control" id="email" aria-describedby="emailHelp"><br>
+					</div>
+
+					<div class="form-group col-md-6">
+						<label for="pass" class="titles">Password</label>
+						<input name="pass" type="password" value="{{curruser.pass}}" class="form-control" id="email" aria-describedby="emailHelp"><br>
+					</div>
+
+					<div class="form-group col-md-6">
+						<label for="phone" class="titles">Phone</label>
+						<input name="phone" type="text" value="{{curruser.phone}}" class="form-control" id="email" aria-describedby="emailHelp"><br>
+					</div>
+				</div>
+				<div class="correctButton">
+					<button name="subscribe" type="submit" class="btn btn-secondary btn-sm btnWidth">Save Changes</button>
+				</div>
+			</form>
+				<div id="centerBtn">
+					<button class="btn btn-secondary btn-sm btnWidth">
+						<a class="correctButton btnColorChange" href="/viewusers">Cancel</a>
+					</button>
+				</div>
+		</div>
+	</div>
+	{# END OF FORM #}
+
+
+	{# JAVASCRIPT FOR WEBCAM #}
+	<script language="JavaScript">
+		Webcam.set({width: 200, height: 150, image_format: 'jpeg', jpeg_quality: 90});
+Webcam.attach('#my_camera');
+
+// A button for taking snaps
+
+function take_snapshot() { // take snapshot and get image data
+Webcam.snap(function (data_uri) { // display results in page
+document.getElementById('results').innerHTML = '<img id="imageprev" src="' + data_uri + '"/>';
+saveSnap();
+});
+
+// Webcam.reset();
+}
+
+function saveSnap() { // Get base64 value from <img id='imageprev'> source
+var base64image = document.getElementById("imageprev").src;
+
+Webcam.upload(base64image, 'upload.php', function (code, text) {
+console.log('Save successfully');
+// console.log(text);
+});
+
+}
+	</script>
+{% endblock content %}

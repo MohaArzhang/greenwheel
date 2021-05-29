@@ -1,0 +1,332 @@
+/* MOHA CSS */
+
+.frameUserPhoto {
+    width: 50px !important;
+    height: 50px !important;
+}
+
+.frameUserPhotoBig {
+    width: 150px !important;
+    height: 150px !important;
+}
+
+.centerImage {
+    text-align: center;
+}
+
+.title_edit_user {
+    text-align: center;
+    color: rgb(138, 1, 1);
+    margin-bottom: 20px;
+}
+
+#bicycleLogo {
+    width: 120px;
+}
+
+#headTitle {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #0BC514;
+}
+
+.bodyLogin {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.bodyRegister {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footerText {
+    text-align: center;
+    font-size: 0.7rem;
+    margin-top: 30px;
+}
+
+.titles {
+    font-size: 0.8rem;
+}
+
+.correctWidth {
+    width: 100px;
+    margin: 0 auto !important;
+}
+
+.correctButton {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.customBtn {
+    margin: 0 40px;
+    color: white;
+    width: 150px;
+}
+
+.errorFormat {
+    color: red;
+    list-style-type: circle;
+    width: 500px;
+    margin: 0 auto;
+    font-size: 0.8rem;
+}
+
+.masterDiv {
+    width: unset;
+    height: 70px;
+    padding-top: 10px;
+    background-color: lightgray;
+    text-align: center;
+}
+
+.navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+    font-size: 0.8rem;
+}
+
+.navDiv {
+    margin: 20px 0;
+}
+
+#navbarNav {
+    background-color: gray !important;
+}
+
+.correctWidth {
+    margin: 0 20px !important;
+}
+
+.alignCamera {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.alignCamera2 {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.forwebCam {
+    display: flex;
+}
+
+#resultFrame {
+    width: 200px;
+    height: 150px;
+    color: white;
+    border-style: solid;
+    border-color: lightgray;
+    border-width: 3px;
+    background-color: lightgray;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    text-align: center;
+    display: flex;
+    padding: 50px 15px;
+}
+
+.btnWidth {
+    width: 200px !important;
+}
+
+.btnWidth2 {
+    width: 150px !important;
+    margin: 0 auto;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+/* END MOHA CSS */
+
+
+/* ALI CSS */
+
+.picker {
+    max-width: 500px;
+    margin: 50px auto;
+}
+
+.dateTimeInput {
+    margin: 15px auto;
+}
+
+.checkOutBtn {
+    width: 400px;
+    margin: 50px auto !important;
+}
+
+.centerall {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.largwidth {
+    width: 335px !important;
+}
+
+.cardwidth {
+    width: 405px !important;
+    height: 230px !important;
+}
+
+
+/* radius buttons styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+.card {
+    position: relative;
+    padding: 0;
+    margin: 0 !important;
+    border-radius: 20px;
+    overflow: hidden;
+    /*   max-width: 280px; */
+    max-height: 340px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2)
+}
+
+.card .card-image {
+    width: 100%;
+    max-height: 270px
+}
+
+.card .card-image img {
+    width: 100%;
+    max-height: 270px;
+    object-fit: contain
+}
+
+.card .card-content {
+    position: absolute;
+    bottom: -180px;
+    color: rgb(0, 0, 0);
+    background: rgba(36, 155, 89, 0.808);
+    backdrop-filter: blur(15px);
+    min-height: 140px;
+    width: 100%;
+    transition: bottom .4s ease-in;
+    box-shadow: 0 -10px 10px rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.2)
+}
+
+.card:hover .card-content {
+    bottom: 0px
+}
+
+.card:hover .card-content h4,
+.card:hover .card-content h5 {
+    transform: translateY(10px);
+    opacity: 1
+}
+
+.card .card-content h4,
+.card .card-content h5 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    transition: 0.8s;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(-40px);
+    transition-delay: 0.2s
+}
+
+.card .card-content h5 {
+    transition: 0.5s;
+    font-weight: 200;
+    font-size: 0.8rem;
+    letter-spacing: 2px
+}
+
+.card .card-content .social-icons {
+    list-style: none;
+    padding: 0
+}
+
+.card .card-content .social-icons li {
+    margin: 10px;
+    transition: 0.5s;
+    transition-delay: calc(0.15s * var(--i));
+    transform: translateY(50px)
+}
+
+.card:hover .card-content .social-icons li {
+    transform: translateY(20px)
+}
+
+.card .card-content .social-icons li a {
+    color: #fff
+}
+
+.card .card-content .social-icons li a span {
+    font-size: 1.3rem
+}
+
+
+/* radius buttons styles */
+
+.choose {
+    display: flex;
+    justify-content: center;
+    padding: 5% 0;
+    margin-top: 10px
+}
+
+.choose input {
+    display: none
+}
+
+#male {
+    margin-right: 50px;
+    margin-left: 50px
+}
+
+#male span,
+#female span {
+    display: block;
+    background: #d2ffea;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    /*  transition: .5s; */
+    font-size: 24px;
+    color: #262626;
+    cursor: pointer
+}
+
+#male input:checked+span {
+    background: #008b2a;
+    color: black;
+    /*  margin-right: 60px; */
+    cursor: pointer
+}
+
+#female input:checked+span {
+    background: #008b2a;
+    color: black;
+    cursor: pointer
+}
+
+.choose .fa {
+    display: block;
+    line-height: 70px;
+    border-radius: 50%
+}
+
+
+/* END ALI CSS */

@@ -1,0 +1,120 @@
+
+{% extends "master.html.twig" %}
+
+{% block title %}Register{% endblock %}
+{% block js %}
+<style>
+#my_camera{
+ width: 200px;
+ height: 150px;
+}
+</style>
+{% endblock %}
+{% block content %}
+
+<div class="container">
+  <div class="row justify-content-md-center" class="forwebCam" >
+	 <div  class="col-md-3 " >
+	     <input type=button value="Turn on Camera" onClick="configure()" class="btn btn-secondary btn-sm btnWidth2 ">
+	     <input type=button value="Take Snapshot" onClick="take_snapshot()" class="btn btn-secondary btn-sm btnWidth2 ">
+	 </div>
+	 
+	 <div  class="col-md-3 " id="results">
+		<div id="resultFrame"><div>Your captured image will appear here</div></div>
+     </div>
+     
+     <div   class="col-md-3 ">
+		<div id="my_camera" id="borderCamera"></div>
+	 </div>
+  </div >	
+</div>
+<br/>	
+	{# ERROR CHECK #}
+	{% if errorList %}
+		<ul>
+			{% for error in errorList %}
+				<li class="errorFormat">{{error}}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+	{# END ERROR CHECK #}
+
+
+	{# FORM #}
+	<div class="mx-auto">
+		<div class="bodyRegister">
+			<form method="POST">
+				<div class="form-row">
+					<div class="form-group col-md-6 h-50">
+						<label for="email" class="titles">Name</label>
+						<input name="name" type="text" value="{{v.name}}" class="form-control" id="email" aria-describedby="emailHelp"><br>
+					</div>
+
+					<div class="form-group col-md-6 h-50">
+						<label for="address" class="titles">Address</label>
+						<input name="address" type="text" value="{{v.address}}" class="form-control" id="email" aria-describedby="emailHelp"><br>
+					</div>
+
+					<div class="form-group col-md-6">
+						<label for="postcode" class="titles">Postal Code</label>
+						<input name="postcode" type="text" value="{{v.postcode}}" class="form-control" id="email" aria-describedby="emailHelp"><br>
+					</div>
+
+					<div class="form-group col-md-6">
+						<label for="email" class="titles">Email</label>
+						<input name="email" type="text" value="{{v.email}}" class="form-control" id="email" aria-describedby="emailHelp"><br>
+					</div>
+
+					<div class="form-group col-md-6">
+						<label for="pass" class="titles">Password</label>
+						<input name="pass" type="password" value="{{v.pass}}" class="form-control" id="email" aria-describedby="emailHelp"><br>
+					</div>
+
+					<div class="form-group col-md-6">
+						<label for="phone" class="titles">Phone</label>
+						<input name="phone" type="text" value="{{v.phone}}" class="form-control" id="email" aria-describedby="emailHelp"><br>
+					</div>
+				</div>
+
+				<div class="correctButton">
+					<button name="subscribe" type="submit" class="btn btn-secondary btn-sm btnWidth"  onClick="saveSnap()">Subscribe</button>
+				</div>
+			</form>
+		</div>
+	</div>
+{# END OF FORM #}
+
+
+{# JAVASCRIPT FOR WEBCAM #}
+<script type="text/javascript" src="webcam.min.js"></script>
+
+ <script language="JavaScript">
+ 
+ function configure(){
+  Webcam.set({
+   width: 200,
+   height: 150,
+   image_format: 'jpg',
+   jpeg_quality: 90
+  });
+  Webcam.attach( '#my_camera' );
+ }
+
+ function take_snapshot() {
+
+  Webcam.snap( function(data_uri) {
+  document.getElementById('results').innerHTML = 
+   '<img id="imageprev" src="'+data_uri+'"/>';
+   saveSnap();
+  } );
+ }
+
+function saveSnap(){
+ var base64image = document.getElementById("imageprev").src;
+ Webcam.upload( base64image, '/upload.php', function(code, text) {
+  console.log('Save successfully');
+ });
+
+}
+</script>
+{% endblock content %}

@@ -1,0 +1,25 @@
+{% extends "master-admin.html.twig" %}
+
+{% block title %}Admin
+{% endblock %}
+{% block content %}
+<div class="container">
+		<div class="correctButton">
+			<a href='/logs/everything.log'>
+				<div class="btn btn-secondary btn-sm customBtn">View logs</div>
+			</a>
+		</div>
+		<div class="correctButton">
+			<a href='/viewusers'>
+				<div class="btn btn-secondary btn-sm customBtn">Manage Users</div>
+			</a>
+		</div>
+		<div class="correctButton">
+			<a href='/statistics'>
+				<div class="btn btn-secondary btn-sm customBtn">View Statistics</div>
+			</a>
+		</div>
+</div>
+
+
+{% endblock content %}

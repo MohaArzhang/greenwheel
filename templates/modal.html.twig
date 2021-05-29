@@ -1,0 +1,68 @@
+{% extends "master.html.twig" %}
+
+{% block js %}
+	<style>
+		.center {
+			display: flex;
+			flex-direction: column;
+			margin: 20px 0;
+			justify-content: center;
+			align-items: center;
+		}
+	</style>
+{% endblock %}
+
+
+{% block content %}
+<script>
+    $(document).ready(function(){
+        $("#exampleModal").modal('show');
+    });
+ $('#exampleModal').modal({
+    		backdrop: 'static',
+    		keyboard: false
+		}); 
+</script>
+<div class="center">
+		<button type="button" class="btn btn btn-secondary" onclick="javascript:window.history.back();">Back to Booking Page</button>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Booking Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">StationId</th>
+      <th scope="col">Check Out</th>
+      <th scope="col">Check In</th>
+      <th scope="col">Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">{{stationid}}</th>
+      <td>{{timeout}}</td>
+      <td>{{timein}}</td>
+      <td>{{biketype}}</td>
+    </tr>
+    
+  </tbody>
+</table>
+      </div>
+      <div class="modal-footer">
+       <a href="http://greenwheel.ipd24.ca/booking?payid=1"><button type="submit"  class="btn btn-success" >PAY Now</button> </a>
+        
+        <button type="button" class="btn btn-info" onclick="javascript:window.history.back();">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

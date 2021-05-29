@@ -1,0 +1,213 @@
+{% extends "master_home.html.twig" %}
+
+{% block title %}Home Page
+{% endblock %}
+{% block js %}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+	
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+<script>    
+      function initMap() {         
+          
+		var location = {lat: 45.508888, lng: -73.561668};
+        const map = new google.maps.Map(document.getElementById('map'), {
+				zoom: 12,
+				center: location 		
+			});
+			
+       const tourStops = [
+
+			[{ lat: 45.49685201440967, lng: -73.679103456297 }, "<h6>(3) Alexis-Nihon Station</h6>  <p><li>Regular Bike: 10</li><li>Electric Bike: 13</li><li>Scooter: 8</li><a href=https://greenwheel.ipd24.ca/booking?id=3>Select Station</a>"],
+			[{ lat: 45.482052111620405, lng: -73.59876100533207 }, "<h6>(6) Sainte-Catherine Station</h6><p><li>Regular Bike: 12</li><li>Electric Bike: 13</li><li>Scooter: 11</li><a href=https://greenwheel.ipd24.ca/booking?id=6>Select Station</a>"],
+			[{ lat: 45.508187560299845, lng: -73.60968113187481 }, "<h6>(5) Mont Royal Station</h6>  <p><li>Regular Bike: 9</li><li>Electric Bike: 6</li><li>Scooter: 10</li><a href=https://greenwheel.ipd24.ca/booking?id=5>Select Station</a>"],
+			[{ lat: 45.504026966973505, lng:  -73.6319544055863},  "<h6>(4) Decelles Station</h6>  <p><li>Regular Bike: 14</li><li>Electric Bike: 11</li><li>Scooter: 15</li><a href=https://greenwheel.ipd24.ca/booking?id=4>Select Station</a>"],
+			[{ lat: 45.529474505081545, lng: -73.64756803493027 }, "<h6>(2) Rockland Station</h6>  <p><li>Regular Bike: 7</li><li>Electric Bike: 10</li><li>Scooter: 9</li><a href=https://greenwheel.ipd24.ca/booking?id=2>Select Station</a>"],
+			[{ lat: 45.554026966973505, lng:  -73.6619544055863},  "<h6>(1) Sauvé Station</h6>  <p><li>Regular Bike: 10</li><li>Electric Bike: 6</li><li>Scooter: 5</li><a href=https://greenwheel.ipd24.ca/booking?id=1>Select Station</a>"],
+		  ];
+		  const infoWindow = new google.maps.InfoWindow();
+		  var image = {
+				url: 'https://www.altairapps.com/images/apps/icon_sevici.png',
+				scaledSize: new google.maps.Size(50, 50),
+                origin: new google.maps.Point(0,0), 
+                anchor: new google.maps.Point(0, 0) 
+			};
+		  tourStops.forEach(([position, title], i) => {
+			const marker = new google.maps.Marker({
+			  position,
+			  map,
+			  icon: image,
+			  title: `${title}`,
+			  optimized: false,
+			});
+			marker.addListener("click", () => {
+			  infoWindow.close();
+			  infoWindow.setContent(marker.getTitle());
+			  infoWindow.open(marker.getMap(), marker);
+			});
+		  });
+		}
+      
+    </script>
+
+	<style>
+		body {
+			scroll-behavior: smooth;
+		}
+
+		#titlePage {
+			color: white;
+			font-size: 4rem;
+			padding-top: 220px;
+			font-weight: bold;
+			font-family: 'Shadows Into Light', cursive;
+		}
+
+		#secondTitle {
+			color: white;
+			font-size: 4rem;
+			padding-top: 30px;
+			font-weight: bold;
+			font-family: 'Shadows Into Light', cursive;
+		}
+
+		#section1 {
+			height: 700px;
+			background-image: url('img/landing-1.jpg');
+			background-size: cover;
+			text-align: left;
+			padding-left: 120px;
+		}
+
+		#section2 {
+			height: 400px;
+			background-color: rgb(140, 140, 140);
+			text-align: center;
+		}
+
+        #section4 {
+			height: 300px;
+			background-color: rgb(99, 98, 98);
+			text-align: center;
+		}
+
+		#section3 {
+			height: 600px;
+			text-align: center;
+		}
+
+		.colorLink {
+			color: white;
+			font-family: 'Raleway', sans-serif !important;
+		}
+
+		.colorLinkBlack {
+			color: black;
+			font-family: 'Raleway', sans-serif !important;
+		}
+
+		a:hover {
+			text-decoration: none;
+			color: #9bffa0;
+		}
+
+		.hoverBlack:hover {
+			text-decoration: none;
+			color: black;
+		}
+
+		.imageSize {
+			height: 100px width: 70% !important;
+		}
+
+		.container {
+			display: flex !important;
+			justify-content: center !important;
+		}
+
+		#aboutText {
+			font-family: 'Raleway', sans-serif;
+			color: white;
+		}
+
+        #contactText {
+			display: block !important;
+			font-family: 'Raleway', sans-serif;
+			color: white;
+		}
+
+		.bookTitle {
+			color: white;
+			text-align: center;
+		}
+
+		.bookTitle:hover {
+			color: white;
+		}
+
+		.btn {
+			margin-top: 80px;
+		}
+
+        .arrowUp{
+			color: white;
+            font-size: 2rem;
+            margin-top: 30px;
+        }
+	</style>
+{% endblock js %}
+
+{% block content %}
+	<div>
+		<div class="main" id="section1">
+			<h2 id="titlePage">Discover City</h2>
+			<div class="colorLink">
+				<a class="colorLink" href="#section2">More information</a>
+			</div>
+		</div>
+
+{# ABOUT US #}
+		<div class="main" id="section2">
+			<h2 id="secondTitle">About Us</h2>
+			<div id="aboutText" class="container">
+				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+			</div>
+
+{# BOOK NOW #}
+			<div class="page-content page-container" id="page-content">
+				<div class="padding">
+					<div class="container d-flex justify-content-center">
+						<div class="template-demo mt-2">
+							<button class="btn btn-outline-dark btn-icon-text">
+								<a class="d-inline-block text-left bookTitle" href="#section3">Book Your Bike Now</a>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+{# END BOOK NOW #}
+{# END ABOUT US #}
+
+{# BOOKIND SECTION #}
+<div id="section3">
+				<div style = "height: 600px; width: 100%" id="map"></div>
+</div>
+{# END BOOKING SECTION #}
+{# CONTACT US #}
+		<div class="main" id="section4">
+			<h2 id="secondTitle">Contact Us</h2>
+			<div id="contactText" class="container">
+                <div>Phone: (514)000 0000</div>
+                <div>Address: 1111, Somewhere in the Street, H0H 20H</div>
+                <div>Email: email@mail.com</div>
+			</div>
+{# END CONTACT US #}
+			<div><a href="#section0"><i class="fas fa-arrow-circle-up arrowUp"></i></a></div>
+		</div>
+	</div>
+<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBON6db-E8cIzVii1TuqKult0KLq9zvrDE&callback=initMap"
+      async>
+</script>
+{% endblock content %}
